@@ -46,6 +46,7 @@ state = {
     };
 
   render() {
+    console.log('app');
     return (
       <>
         <Navbar 

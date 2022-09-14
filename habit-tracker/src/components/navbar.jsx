@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class Navbar extends Component {
   render() {
+    console.log('navbar');
     return (
       <div className="navbar">
         <i className="navbar-logo fas fa-leaf"></i>
