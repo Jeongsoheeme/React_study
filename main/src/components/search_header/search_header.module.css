@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    height: 5rem;
+    padding: 1em;
+}
+
+.img{
+    margin-right: 2em;
+}
+
+.input {
+    flex-basis: 100%;
+    border: 0;
+    outline: 0;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+}
+
+.button {
+    border: 0;
+    outline: 0;
+    background-color: white;
+    cursor: pointer;
+}
+.button img {
+    height: 100%;
+}
