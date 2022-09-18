@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './app.css';
+import VideoList from './components/video_list/video_list';
 
 function App() {
   //videos는 변수에 데이터저장, setVideos는 비디오를 업데이트 선언하여 useState을 호출, []는 텅텅 비어진 비디오의 목록 
@@ -21,7 +22,7 @@ function App() {
       .catch(error => console.log('error', error));
   }, []);
 
-  return <h1>hellp</h1>;
+  return <VideoList videos={videos} />;
 }
 
 export default App;
