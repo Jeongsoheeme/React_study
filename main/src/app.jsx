@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './app.module.css';
+import Search_Category from './components/search_category/search_category';
 import SearchHeader from './components/search_header/search_header';
 import VideoList from './components/video_list/video_list';
 
@@ -37,6 +38,7 @@ function App() {
   return (
     <div className={styles.app}>
       <SearchHeader onSearch={search}/>
+      <Search_Category/>
       <VideoList videos={videos} />;
     </div>
   )
