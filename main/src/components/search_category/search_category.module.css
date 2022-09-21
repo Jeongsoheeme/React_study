@@ -1,35 +1,38 @@
 .category_menu{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .category_title{
     font-size: 24px;
     font-weight: 800;
-    margin-left: 30px;
+    margin-left: 0.8em;
 }
 
 .category01{
-    width: 33%;
+    width: 32%;
     padding: 0.8%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 0.8rem;
+    color: #666;
 }
 
 .category02 {
-    width: 33%;
+    width: 32%;
     padding: 0.8%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 0.8rem;
+    color: #666;
 }
 
 .category03 {
-    width: 33%;
+    width: 32%;
     padding: 0.8%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 0.8rem;
+    color: #666;
 
 }
