@@ -9,30 +9,12 @@
     margin-left: 0.8em;
 }
 
-.category01{
+.category_menu li{
     width: 32%;
-    padding: 0.8%;
-    border: 1px solid #ccc;
+    padding: 0.9%;
+    box-shadow: -1px -0.5px 5px #ddd;
     border-radius: 5px;
     font-size: 0.8rem;
     color: #666;
-}
-
-.category02 {
-    width: 32%;
-    padding: 0.8%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-.category03 {
-    width: 32%;
-    padding: 0.8%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    color: #666;
-
+    font-weight: 700;
 }

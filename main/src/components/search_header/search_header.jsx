@@ -7,23 +7,38 @@ const SearchHeader = ({onSearch}) => {
         const value = inputRef.current.value;
         onSearch(value);
     };
-    const onClick = () => {
+    const onClick_search = () => {
         handleSearch();
     };
 
-    const onKeyPress=(event) => {
+    const onKeyPress = (event) => {
         if (event.key === 'enter'){
-            handleSearch();
+            handleSearch(); 
         }
+    };
+
+    const onClick_menu = (document) => {
+        console.log("메뉴나온다")
     };
 
     return(
         <header className={styles.header}>
             <img className={styles.img} src="/images/logo.png" alt="logo" />
             <input ref={inputRef} className={styles.input} type="search" placeholder="Search..." onKeyPress={onKeyPress} />
-            <button className={styles.button} type="submit" onClick={onClick}>
+            <button className={styles.button} type="submit" onClick={onClick_search}>
                 <img src="/images/search.png" alt="search" />
             </button>
+            <div className={styles.topmenu_wrap} onClick={onClick_menu}>
+                <a className={styles.topmenu} href="#"><img src="/images/menu.png" alt="menu" /></a>
+                <ul className={styles.topmenu_category}>
+                    <li><a href="#">메세지</a></li>
+                    <li><a href="#">마이트립</a></li>
+                    <li><a className={styles.salemenu} href="#">판매내역</a></li>
+                    <li><a href="#">구매내역</a></li>
+                    <li><a href="#" className={styles.privacy}>마이페이지</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>
+            </div>
         </header>
     );;
 };
