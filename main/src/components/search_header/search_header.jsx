@@ -1,6 +1,5 @@
 import styles from './search_header.module.css';
-import React, { useRef,useState } from 'react';
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 
 const SearchHeader = ({onSearch}) => {
     const inputRef = useRef();
@@ -18,25 +17,28 @@ const SearchHeader = ({onSearch}) => {
         }
     };
 
-    const [ topmenu_category, setSyle ] = useState({display: 'none'})
+    const submenu = useRef();
+
+    const submenu_btn = () => {
+        if (submenu.current.style.display == 'none'){
+            submenu.current.style.display = 'block';
+        }else{
+            submenu.current.style.display = 'none';
+        }
+        // submenu.current.style.display = 'block';
+    };
 
     return(
         <header className={styles.header}>
             <img className={styles.img} src="/images/logo.png" alt="logo" />
-            <input ref={inputRef} className={styles.input} type="search" placeholder="Search..." onKeyPress={onKeyPress} />
+            <input ref={inputRef} className={styles.input} type="search" placeholder="어디로 떠나고 싶으세요?" onKeyPress={onKeyPress} />
             <button className={styles.button} type="submit" onClick={onClick_search}>
                 <img src="/images/search.png" alt="search" />
             </button>
 
-            <div className={styles.topmenu_wrap} 
-            onMouseEnter={e => {setStyle({display: 'block'})
-             }}
-             onMouseLeave={e => {
-                setStyle({display: 'none'})
-             }}
-        >
+            <div className={styles.topmenu_wrap} onClick={submenu_btn}>
                 <a className={styles.topmenu} href="#"><img src="/images/menu.png" alt="menu" /></a>
-                <ul className={styles.topmenu_category}>
+                <ul className={styles.topmenu_category} ref={submenu}>
                     <li><a href="#">메세지</a></li>
                     <li><a href="#">마이트립</a></li>
                     <li><a className={styles.salemenu} href="#">판매내역</a></li>
@@ -46,7 +48,7 @@ const SearchHeader = ({onSearch}) => {
                 </ul>
             </div>
         </header>
-    );;
+    );
 };
 
 export default SearchHeader;
