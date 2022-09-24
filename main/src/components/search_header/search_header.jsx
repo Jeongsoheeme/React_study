@@ -1,5 +1,6 @@
 import styles from './search_header.module.css';
-import React, { useRef } from 'react';
+import React, { useRef,useState } from 'react';
+import React, { useState } from 'react';
 
 const SearchHeader = ({onSearch}) => {
     const inputRef = useRef();
@@ -17,9 +18,7 @@ const SearchHeader = ({onSearch}) => {
         }
     };
 
-    const onClick_menu = (document) => {
-        console.log("메뉴나온다")
-    };
+    const [ topmenu_category, setSyle ] = useState({display: 'none'})
 
     return(
         <header className={styles.header}>
@@ -28,7 +27,14 @@ const SearchHeader = ({onSearch}) => {
             <button className={styles.button} type="submit" onClick={onClick_search}>
                 <img src="/images/search.png" alt="search" />
             </button>
-            <div className={styles.topmenu_wrap} onClick={onClick_menu}>
+
+            <div className={styles.topmenu_wrap} 
+            onMouseEnter={e => {setStyle({display: 'block'})
+             }}
+             onMouseLeave={e => {
+                setStyle({display: 'none'})
+             }}
+        >
                 <a className={styles.topmenu} href="#"><img src="/images/menu.png" alt="menu" /></a>
                 <ul className={styles.topmenu_category}>
                     <li><a href="#">메세지</a></li>
