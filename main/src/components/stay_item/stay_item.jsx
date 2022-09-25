@@ -1,14 +1,14 @@
 import React from 'react';
-import styles from './video_item.module.css';
+import styles from './stay_item.module.css';
 
 //props를 ({video: {snippet}})로 바꾸면 아래 props.video 경로를 바로 snippet로 바꿀수있다
-const VideoItem = ({video: {snippet}}) => (
+const StayItem = ({video: {snippet}}) => (
     <li className={styles.container}>
-        <div className={styles.video}>
+        <div className={styles.item}>
             <img
                 className={styles.thumbnail}
                 src={snippet.thumbnails.medium.url}
-                alt="video thumbnail"
+                alt="thumbnail"
             />
             <div className={styles.metadata}>
                 <p className={styles.title}>{snippet.title}</p>
@@ -18,4 +18,4 @@ const VideoItem = ({video: {snippet}}) => (
     </li>
 );
 
-export default VideoItem;
+export default StayItem;
